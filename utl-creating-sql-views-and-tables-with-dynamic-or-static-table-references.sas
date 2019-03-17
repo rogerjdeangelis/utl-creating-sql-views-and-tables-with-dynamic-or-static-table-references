@@ -60,11 +60,9 @@ Creating sql views and table with dynamic or imbedded table references
              set classvue;                                                                                                        
           run;quit;                                                                                                               
                                                                                                                                   
-   3.   Prompt the user for input "libref.table" and create SAS tables                                                            
-        (does not work with views and issues some 'weak' warnings)                                                                
+   3.   Prompt the user for input "libref.table" and create SAS tables                                                                                                                
         (the prompt code is inside and saved with the view)                                                                       
-        (also requires a NULL (empty) SAS table)                                                                                  
-                                                                                                                                  
+                                                                                                                                                                                                                     
         This window will pop up                                                                                                   
                                                                                                                                   
         Command ===>                                                                                                              
