@@ -1,6 +1,4 @@
 # utl-creating-sql-views-and-tables-with-dynamic-or-static-table-references
-Creating sql views and tables with dynamic or static table references
-
     Creating sql views and tables with dynamic or static table references                                                               
                                                                                                                                         
     Some of these solution only work with the 1980's Classic SAS DMS interface.                                                         
@@ -67,7 +65,8 @@ Creating sql views and tables with dynamic or static table references
               run;quit;                                                                                                                 
                                                                                                                                         
        3.   Prompt the user for input "libref.table" and create SAS tables                                                              
-            (the prompt code is inside and sql code)                                                                                    
+            (the prompt code is inside sql code)                                                                                        
+            (You can move the code outside the SQL code but seems natural to keep within SQL)                                           
                                                                                                                                         
             This window will pop up                                                                                                     
                                                                                                                                         
@@ -192,10 +191,10 @@ Creating sql views and tables with dynamic or static table references
                length name $40;                                                                                                         
                window start                                                                                                             
                   #3  "Type the libref.table"                                                                                           
-                  #4  "and press the Enter key then home key."                                                                          
+                  #4  "and press the Enter key then Home key."                                                                          
                   #7 "Libref.Table:" +1 name attr=underline                                                                             
-                  #11 "When you are finished entering variable names, hit end(of pf3)"                                                  
-                  #12 "then end at the classic 1980s DMS command line.";                                                                
+                  #11 "When you are finished entering reference, type end(PF3)"                                                         
+                  #12 "at the classic 1980s DMS command line.";                                                                         
                display start;                                                                                                           
                call symputx("table",name);                                                                                              
             run;quit;                                                                                                                   
@@ -214,14 +213,14 @@ Creating sql views and tables with dynamic or static table references
     +-----------------------------------------------------------------+                                                                 
     |                                                                 |                                                                 
     |  Type the libref.table                                          |                                                                 
-    |  and press the Enter key then home key                          |                                                                 
+    |  and press the Enter key then Home key                          |                                                                 
     |                                                                 |                                                                 
     |                                                                 |                                                                 
     |  libref.Table _______________________________                   |                                                                 
     |                                                                 |                                                                 
     |                                                                 |                                                                 
-    |  When you are finished entering variable names, hit end(oPf3)"  |                                                                 
-    |  then end at the classic 1980s DMS command line.";              |                                                                 
+    |  When you are finished entering the reference, type end(Pf3)"   |                                                                 
+    |  at the classic 1980s DMS command line.";                       |                                                                 
     |                                                                 |                                                                 
     |                                                                 |                                                                 
     |                                                                 |                                                                 
@@ -267,8 +266,5 @@ Creating sql views and tables with dynamic or static table references
     NOTE: PROCEDURE SQL used (Total process time):                                                                                      
           real time           11.51 seconds                                                                                             
           cpu time            0.23 seconds                                                                                              
-                                                                                                                                        
-                                                                                                                                        
-                                                                                                                                        
                                                                                                                                         
                                                                                                                                         
